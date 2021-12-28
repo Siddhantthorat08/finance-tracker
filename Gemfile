@@ -25,7 +25,7 @@ gem 'devise-bootstrap-views', '~> 1.0'
 gem 'iex-ruby-client'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem "font-awesome-rails"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

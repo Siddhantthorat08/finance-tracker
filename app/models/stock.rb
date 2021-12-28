@@ -6,8 +6,15 @@ class Stock < ApplicationRecord
         secret_token: 'secret_token',
         endpoint: 'https://sandbox.iexapis.com/v1'
         )
-
-        client.price(ticker_symbol)
+        begin
+            #created a company_name variable to store name of company 
+            company = client.company(ticker_symbol)
+            company_name = company.company_name
+            #created a new Stock object to store price, name and ticker symbol for any Stock
+            Stock.new(ticker: ticker_symbol, name: company_name, last_price: client.price(ticker_symbol))
+        rescue => exception
+        return nil
+        end
     end
 
 end
